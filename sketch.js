@@ -24,10 +24,19 @@ function draw() {
     movRect.x=mouseX
     movRect.y=mouseY
     drawSprites();
-    isTouching(movRect,rect1)
-    isTouching(movRect,rect2)
-    isTouching(movRect,rect3)
-    isTouching(movRect,rect4)
+    if(changeColor(movingRect,Rect1)){
+ movingRect.shapeColor = Rect1.shapeColor
+ }
+ if(changeColor(movingRect,Rect2)){
+  movingRect.shapeColor = Rect2.shapeColor
+  }
+  if(changeColor(movingRect,Rect3)){
+    movingRect.shapeColor = Rect3.shapeColor
+    }
+    if(changeColor(movingRect,Rect4)){
+      movingRect.shapeColor = Rect4.shapeColor
+      } 
+    
 }
 
 function isTouching(obj1,obj2){
@@ -35,9 +44,9 @@ function isTouching(obj1,obj2){
         && obj2.x - obj1.x < obj2.width/2 + obj1.width/2 && obj1.y - obj2.y < obj2.height/2 + obj1.height/2
         && obj2.y - obj1.y < obj2.height/2 + obj1.height/2)
     {
-        obj1.shapeColor = obj2.shapeColor            
+        return = true;
     }else{
-        obj1.shapeColor= rgb(120, 4, 209)
+    return = false;
     }
     
 }
